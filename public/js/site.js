@@ -30,7 +30,7 @@ function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
 
-document.querySelector('form').addEventListener('submit', (e) => {    
+document.querySelector('form').addEventListener('submit', (e) => {
     const formData = new FormData(e.target);
 
     var age = formData.get("age");
@@ -49,14 +49,28 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
         var elements = document.getElementsByName("age");
         for (var ii = 0; ii < elements.length; ii++) {
-                elements[ii].value = "";
+            elements[ii].value = "";
         }
 
         var elements = document.getElementsByName("phonenumber");
         for (var ii = 0; ii < elements.length; ii++) {
-                elements[ii].value = "";
+            elements[ii].value = "";
         }
     });
 
     success("Thank you! 🎉")
+});
+
+document.querySelector('a#open-modal').addEventListener('click', function (event) {
+    event.preventDefault();
+    var modal = document.querySelector('.modal'); // assuming you have only 1
+    var html = document.querySelector('html');
+    modal.classList.add('is-active');
+    html.classList.add('is-clipped');
+
+    modal.querySelector('.modal-background').addEventListener('click', function (e) {
+        e.preventDefault();
+        modal.classList.remove('is-active');
+        html.classList.remove('is-clipped');
+    });
 });
