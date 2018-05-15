@@ -1,4 +1,8 @@
-﻿.main {
+﻿body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main {
   background: #2980b9;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);
