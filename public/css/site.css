@@ -1,0 +1,50 @@
+﻿.main {
+  background: #2980b9;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #2980b9);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #2980b9);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.footer {
+  padding-bottom: 10px !important;
+}
+
+li {
+  list-style: none !important;
+}
+
+.iti-flag {
+  background-image: url("../lib/intl-tel-input/img/flags.png");
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2 / 1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .iti-flag {
+    background-image: url("../lib/intl-tel-input/img/flags@2x.png");
+  }
+}
+
+
+li:last-child {
+  margin-bottom: 0px;
+}
+
+ul .leaf {
+  background: silver;
+  padding: 1px;
+  padding-left: 40px;
+}
+
+.leaf>li {
+  margin-bottom: 40px;
+}
+
+.hidden {
+  display: none;
+}
