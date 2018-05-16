@@ -432,8 +432,22 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div>                    
                 </div>
+                <div class="column">
+                        <div class="content">
+                            <h3>
+                                Legal
+                            </h3>
+                            <ul class="">
+                                <li>
+                                    <a href="#" onclick="window.location.href = 'imprint.html'">
+                                        Imprint
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
             </div>
 
             <div class="columns">
@@ -463,6 +477,31 @@
     <div class="fb-customerchat" page_id="1645407598841407" ref="type">
     </div>
 </body>
+
+<link rel="stylesheet" type="text/css" href="./public/lib/cookieconsent/build/cookieconsent.min.css" />
+<script src="./public/lib/cookieconsent/build/cookieconsent.min.js"></script>
+<script>
+    window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+            "palette": {
+                "popup": {
+                    "background": "#f5f5f5",
+                    "text": "black"
+                },
+                "button": {
+                    "background": "#209cee",
+                    "text": "white"
+                }
+            },
+            "content": {
+                "dismiss": "Got it! 🍪"
+            },
+            "theme": "edgeless",
+            "position": "bottom",
+            "static": true
+        })
+    });
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119355894-1"></script>
