@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="robots" content="index, follow">
+
+    <meta name=“twitter:card” content=“summary” />
+    <meta name=“twitter:site” content=“PeakLevel” />
+    <meta property=“og:locale” content=“en_US” />
+    <meta property=“og:site_name” content=“PeakLevel” />
+    <meta property=“og:image” content=“public/images/logo.png” />
+    <meta property=“og:type” content=“website” />
+    <meta property=“og:description” content=” PeakLevel is the fastest way to collect unique and accurate data ” />
+    <meta property=“og:title” content=“PeakLevel - data collected the right way” />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./public/favicon-16x16.png">
+    <link rel="manifest" href="./public/site.webmanifest">
+    <link rel="mask-icon" href="./public/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>PeakLevel</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="./public/css/site.css" />
+    <link href="./public/lib/noty/lib/noty.css" rel="stylesheet">
+
+</head>
+
+<body class="layout-default Site">
+
+    <script>
+        function warn(text) {
+            text = '<div class="is-size-4">' + text + '</div>'
+            new Noty({
+                type: 'warning',
+                theme: 'sunset',
+                text: text,
+                layout: 'topCenter'
+            }).show();
+        }
+
+        function danger(text) {
+            text = '<div class="is-size-4">' + text + '</div>'
+            new Noty({
+                type: 'error',
+                theme: 'nest',
+                text: text,
+                layout: 'topCenter'
+            }).show();
+        }
+
+        function info(text) {
+            text = '<div class="is-size-4">' + text + '</div>'
+            new Noty({
+                type: 'info',
+                theme: 'metroui',
+                text: text,
+                layout: 'topCenter',
+                timeout: 3000,
+                progressBar: true
+            }).show();
+        }
+
+        function success(text) {
+            text = '<div class="is-size-4">' + text + '</div>'
+            new Noty({
+                type: 'success',
+                theme: 'sunset',
+                text: text,
+                layout: 'topCenter',
+                timeout: 3000,
+                progressBar: true
+            }).show();
+        }
+
+        function awesome(text) {
+            text = '<div class="is-size-4">' + text + ' 🎈 </div>'
+            new Noty({
+                type: 'success',
+                theme: 'nest',
+                text: text,
+                layout: 'topCenter',
+                timeout: 3000,
+                progressBar: true
+            }).show();
+        }
+    </script>
+
+    <section class="hero is-fullheight is-light">
+        <div class="container">
+            <nav class="navbar is-transparent">
+                <div class="navbar-brand">
+                    <a class="navbar-item" style="padding-top:0px; padding-bottom:0px;" href="/">
+                        <img style="max-height:100% !important;" width="250px" src="./public/images/peaklevel-full-right.svg" alt="PeakLevel">
+                    </a>
+                    <div class="navbar-burger burger hidden" data-target="navbarExampleTransparentExample">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div id="navbarExampleTransparentExample" class="navbar-menu">
+                    <div class="navbar-end">
+                        <div class="navbar-item">
+                            <p class="control">
+                                <a class="button is-primary" href="#" onclick="window.location.href = 'index.html'">
+                                    <span class="icon">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <span>Become a data collector!</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body main">
+            <div class="container">
+                <div class="columns is-centered is-multiline">
+                    <div class="column is-6">
+                        <h3 class="title is-4 has-text-white">
+                            Collect live, visual, complex or time series data from quality samples in the push of a few buttons </h3>
+                        <br>
+                        <h3 class="subtitle is-5 has-text-white">
+                            Need big data sets to train your ML algorithm on? Improve your market research? Get valuable insights for your R&D department?
+                        </h3>
+                        <br>
+                        <h3 class="subtitle is-5 has-text-white">
+                            We crowdsource your data request to a network of verified workers, providing reliable results in a short time frame.
+                        </h3>
+                        <h3 class="subtitle is-5 has-text-white">
+                            Using our AI assisted software, we also make sure non responses and wrong data points are not recorded thus providing sanitised
+                            results right away. Your data collection becomes an optimised inverted funnel.
+                        </h3>
+                        <br>
+                    </div>
+                    <div class="column is-6">
+                        <div class="">
+                            <form method="post" class="form-horizontal" action="/Business">
+                                <div class="card-content is-paddingless">
+                                    <div class="content">
+
+                                        <h3 class="title is-4 has-text-white">
+                                            Give us a short description and we will contact you immediately. 👇
+                                        </h3>
+                                        <div class="field">
+                                            <div class="control">
+                                                <textarea class="textarea" placeholder="Please describe shortly the data points you wish to gather." rows="5" required=""
+                                                    data-val="true" data-val-required="The Description field is required." id="Description"
+                                                    name="Description"></textarea>
+                                                <span class="has-text-danger field-validation-valid" data-valmsg-for="Description" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="field">
+                                            <div class="control">
+                                                <input class="input is-medium" placeholder="The price can be a total or per size/row/lead" required="" type="text" id="Price"
+                                                    name="Price" value="">
+                                                <span class="has-text-danger field-validation-valid" data-valmsg-for="Price" data-valmsg-replace="true"></span>
+                                            </div>
+                                        </div>
+                                        <div class="field">
+                                            <div class="control has-icons-left">
+                                                <input class="input is-medium" type="email" placeholder="Email" required="" data-val="true" data-val-email="The Email field is not a valid e-mail address."
+                                                    data-val-required="The Email field is required." id="Email" name="Email"
+                                                    value="">
+                                                <span class="has-text-danger field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+
+                                                <span class="icon is-small is-left">
+                                                    <i class="fa fa-envelope"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <br>
+
+                                        <div class="field">
+                                            <p class="control has-text-centered">
+                                                <button type="submit" class="button is-primary is-outlined is-medium">Submit</button>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <br>
+                            <div class="column has-text-centered">
+                                <h4 class="subtitle is-5 has-text-white"> Or contact us via
+                                    <a href="mailto:support@datacircle.io" class="btn btn-simple btn-primary btn-lg">Email 📧</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-foot main">
+            <section style="padding-bottom: 70px;">
+                <div class="container">
+                    <p class="is-3 title has-text-white has-text-centered">
+                    </p>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <div class="hero is-medium point-panel" style="padding-top: 0px !important;">
+        <div class="hero-body point-panel-overlay">
+            <div class=" container">
+                <nav class="columns is-multiline">
+                    <div class="column is-12 has-text-centered">
+                        <h2 class="title is-2">
+                            How it works!
+                        </h2>
+                        <br>
+                    </div>
+                    <div class="column is-6 has-text-centered">
+                        <div class="column is-12 is-hidden-mobile" style="height:100px;">
+
+                        </div>
+                        <div class="column is-6 is-offset-3 has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fa fa-3x fa-mobile-alt" style="color:#23d160;"></i>
+                            </span>
+                            <p class="title is-4" style="margin-top: 0.5em;">
+                                <strong>Sign up using your smartphone number.</strong>
+                            </p>
+                            <p class="subtitle">
+                            </p>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="column is-6 is-offset-3 has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fa fa-3x fa-clipboard-check" style="color:#209cee;"></i>
+                            </span>
+                            <p class="title is-4" style="margin-top: 0.5em;">
+                                <strong>Answer the questions and information requests you find interesting</strong>
+                            </p>
+                            <p class="subtitle">
+                            </p>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="column is-6 is-offset-3 has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fa fa-3x fa-hand-holding-usd" style="color:#00d1b2;"></i>
+                            </span>
+                            <p class="title is-4" style="margin-top: 0.5em;">
+                                <strong>Get paid</strong>
+                            </p>
+                            <p class="subtitle">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column is-6 has-text-centered">
+                        <img style="max-height: 800px;" src="./public/images/Apple iPhone 8 Plus Gold.png">
+                    </div>
+
+                </nav>
+
+            </div>
+        </div>
+    </div>
+
+
+    <section class="hero is-medium point-panel is-light">
+        <div class="hero-body point-panel-overlay" style="padding-top: 150px !important;">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column is-12">
+                        <p class="title is-2">
+                            We never share your identity with anyone!
+                        </p>
+                    </div>
+                    <div class="column is-6">
+
+                        <br />
+                        <p class="subtitle is-5">
+                            At PeakLevel we are committed to applying the highest data protection standards and enforce the GDPR. Your personal data
+                            is securely stored on our servers and only given to other parties in a completely anonymised
+                            form, after you have given explicit consent.
+                        </p>
+                        <p class="subtitle is-5">
+                            You sign up and start filling out data calls </p>
+                        <p class="subtitle is-5">
+                            Your demographic data is stored on our secured servers and none of the answers can ever be tied back to you. </p>
+                        <p class="subtitle is-5">
+                            Our clients receive completely anonymized data and are never revealed your identity. </p>
+                    </div>
+                    <div class="column is-6 has-text-left">
+                        <br />
+
+                        <ul class="leaf ">
+                            <li>
+                                <p class="subtitle is-4">
+                                    <span class="icon has-text-success">
+                                        <i class="fas fa-check"></i>
+                                    </span> You respond to a data call.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="subtitle is-4">
+                                    <span class="icon has-text-success">
+                                        <i class="fas fa-check"></i>
+                                    </span> The tool communicates your answers securely.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="subtitle is-4">
+                                    <span class="icon has-text-success">
+                                        <i class="fas fa-check"></i>
+                                    </span> Your data are processed from our automation process.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="subtitle is-4">
+                                    <span class="icon has-text-success">
+                                        <i class="fas fa-check"></i>
+                                    </span> A layer of privacy, protects your identity.
+                                </p>
+                            </li>
+                            <li>
+                                <p class="subtitle is-4">
+                                    <span class="icon has-text-success">
+                                        <i class="fas fa-check"></i>
+                                    </span> The author receives an aggregate data set.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success">Save changes</button>
+                <button class="button">Cancel</button>
+            </footer>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="content">
+                        <h3>
+                            <img style="max-height:100% !important;" width="250px" src="./public/images/peaklevel-full-right.svg" alt="PeakLevel">
+                        </h3>
+                        <p>
+                            Data collected the right way.
+                        </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <h3>
+                            About
+                        </h3>
+                        <ul class="">
+                            <li>
+                                <a href="/">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:atpeak@gmail.com">
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <a href="https://bulma.io" target="_blank">
+                        <img src="https://bulma.io/images/made-with-bulma--dark.png" alt="Made with Bulma" width="128" height="24">
+                    </a>
+                </div>
+                <div class="column">
+                    Copyright ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> PeakLevel All rights reserved.
+                </div>
+                <div class="column">
+                    <div class="is-pulled-right	">
+                        Made with
+                        <span style="color:#9c27b0;">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                        </span> in Berlin
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="./public/lib/noty/lib/noty.min.js" type="text/javascript"></script>
+<script src="./public/js/site.js" type="text/javascript"></script>
+
+
+</html>
