@@ -46,7 +46,10 @@ if (document.querySelector('#businessForm')) {
     });
 }
 
-if (document.getElementsByClassName('fb-customerchat')) {
+if (document.getElementsByClassName('fb-customerchat')[0]) {
+
+    var carousels = bulmaCarousel.attach();
+
     window.fbMessengerPlugins = window.fbMessengerPlugins || {
         init: function () {
             FB.init({
@@ -77,7 +80,6 @@ if (document.getElementsByClassName('fb-customerchat')) {
         }(document, 'script', 'facebook-jssdk'));
     }, 0);
 
-    var carousels = bulmaCarousel.attach();
 } else { 
     window.$crisp = [];
     window.CRISP_WEBSITE_ID = "b701ef4e-da12-4474-bdaa-0bc8f5ec1394";
