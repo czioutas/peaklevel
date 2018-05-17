@@ -46,7 +46,7 @@ if (document.querySelector('#businessForm')) {
     });
 }
 
-if (document.getElementById('fb-customerchat')) {
+if (document.getElementsByClassName('fb-customerchat')) {
     window.fbMessengerPlugins = window.fbMessengerPlugins || {
         init: function () {
             FB.init({
