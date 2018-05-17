@@ -76,3 +76,5 @@ setTimeout(function () {
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 }, 0);
+
+var carousels = bulmaCarousel.attach();

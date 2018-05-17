@@ -37,6 +37,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+    <link rel="stylesheet" href="./public/lib/bulma-ext/carousel.min.css" />
     <link rel="stylesheet" href="./public/css/site.css" />
     <link href="./public/lib/noty/lib/noty.css" rel="stylesheet">
 
@@ -168,58 +169,80 @@
 
     <div class="hero is-medium point-panel" style="padding-top: 0px !important;">
         <div class="hero-body point-panel-overlay">
-            <div class="container">
+            <div class=" container">
                 <nav class="columns is-multiline">
                     <div class="column is-12 has-text-centered">
-                        <h2 class="title is-3">
+                        <h2 class="title is-2">
                             How it works!
                         </h2>
                         <br>
                     </div>
-                    <div class="column is-4 has-text-centered">
-                        <span class="icon is-large" style="margin-right: -15px;">
-                            <i class="fa fa-3x fa-mobile-alt" style="color:#23d160;"></i>
-                        </span>
-                        <p class="title is-4" style="margin-top: 0.5em;">
-                            <strong>Sign up using your smartphone number.
-
-                            </strong>
-                        </p>
-                    </div>
-                    <div class="column is-4 has-text-centered">
-                        <span class="icon is-large">
-                            <i class="fa fa-3x fa-clipboard-check" style="color:#209cee;"></i>
-                        </span>
-                        <p class="title is-4" style="margin-top: 0.5em;">
-                            <strong>Answer the questions and information requests you find interesting
-
-                            </strong>
-                        </p>
-                    </div>
-                    <div class="column is-4 has-text-centered">
-                        <span class="icon is-large">
-                            <i class="fa fa-3x fa-hand-holding-usd" style="color:#00d1b2;"></i>
-                        </span>
-                        <p class="title is-4" style="margin-top: 0.5em;">
-                            <strong>Get paid
-
-                            </strong>
-                        </p>
-                    </div>
-                    <div class="column is-12 is-hidden-mobile"></div>
-                    <div class="column is-12 is-hidden-mobile"></div>
-                    <div class="column is-12 is-hidden-mobile"></div>
-
                     <div class="column is-6 has-text-centered">
-                        <img style="max-height: 800px;" src="./public/images/chat1phone.png">
+                        <div class="column is-12 is-hidden-mobile" style="height:100px;">
+
+                        </div>
+                        <div class="column is-6 is-offset-3 has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fa fa-3x fa-mobile-alt" style="color:#23d160;"></i>
+                            </span>
+                            <p class="title is-4" style="margin-top: 0.5em;">
+                                <strong>Sign up using your smartphone number.</strong>
+                            </p>
+                            <p class="subtitle">
+                            </p>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="column is-6 is-offset-3 has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fa fa-3x fa-clipboard-check" style="color:#209cee;"></i>
+                            </span>
+                            <p class="title is-4" style="margin-top: 0.5em;">
+                                <strong>Answer the questions and information requests you find interesting</strong>
+                            </p>
+                            <p class="subtitle">
+                            </p>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="column is-6 is-offset-3 has-text-centered">
+                            <span class="icon is-large">
+                                <i class="fa fa-3x fa-hand-holding-usd" style="color:#00d1b2;"></i>
+                            </span>
+                            <p class="title is-4" style="margin-top: 0.5em;">
+                                <strong>Get paid</strong>
+                            </p>
+                            <p class="subtitle">
+                            </p>
+                        </div>
                     </div>
-                    <div class="column is-6 has-text-centered">
-                        <img style="max-height: 800px;" src="./public/images/chat2phone.png">
+                    <div class="column is-4 has-text-centered">
+                        <div class='carousel carousel-animated carousel-animate-slide'>
+                            <div class='carousel-container'>
+                                <div class='carousel-item has-background is-active'>
+                                    <img class="is-background" src="./public/images/chat1phone.png" alt=""  />
+                                </div>
+                                <div class='carousel-item has-background'>
+                                    <img class="is-background" src="./public/images/chat2phone.png" alt=""  />
+                                </div>
+                            </div>
+                            <div class="carousel-navigation">
+                                <div class="carousel-nav-left">
+                                    <a>
+                                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="carousel-nav-right">
+                                    <a>
+                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </nav>
             </div>
         </div>
-    </div>
     </div>
 
 
@@ -464,7 +487,7 @@
     gtag('config', 'UA-119355894-1');
 </script>
 
-
+<script src="./public/lib/bulma-ext/carousel.min.js" type="text/javascript"></script>
 <script src="./public/lib/noty/lib/noty.min.js" type="text/javascript"></script>
 <script src="./public/js/site_197349.js" type="text/javascript"></script>
 
