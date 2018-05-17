@@ -46,35 +46,46 @@ if (document.querySelector('#businessForm')) {
     });
 }
 
-
-window.fbMessengerPlugins = window.fbMessengerPlugins || {
-    init: function () {
-        FB.init({
-            appId: '1678638095724206',
-            autoLogAppEvents: true,
-            xfbml: true,
-            version: 'v2.10'
+if (document.getElementById('fb-customerchat')) {
+    window.fbMessengerPlugins = window.fbMessengerPlugins || {
+        init: function () {
+            FB.init({
+                appId: '1678638095724206',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v2.10'
+            });
+        },
+        callable: []
+    };
+    window.fbAsyncInit = window.fbAsyncInit || function () {
+        window.fbMessengerPlugins.callable.forEach(function (item) {
+            item();
         });
-    },
-    callable: []
-};
-window.fbAsyncInit = window.fbAsyncInit || function () {
-    window.fbMessengerPlugins.callable.forEach(function (item) {
-        item();
-    });
-    window.fbMessengerPlugins.init();
-};
-setTimeout(function () {
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {
-            return;
-        }
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-}, 0);
+        window.fbMessengerPlugins.init();
+    };
+    setTimeout(function () {
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    }, 0);
 
-var carousels = bulmaCarousel.attach();
+    var carousels = bulmaCarousel.attach();
+} else { 
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "b701ef4e-da12-4474-bdaa-0bc8f5ec1394";
+    (function () {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })(); 
+}
