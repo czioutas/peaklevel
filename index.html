@@ -38,7 +38,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
     <link rel="stylesheet" href="./public/lib/bulma-ext/carousel.min.css" />
-    <link rel="stylesheet" href="./public/css/site_2.css" />
+    <link rel="stylesheet" href="./public/css/site_3.css" />
     <link href="./public/lib/noty/lib/noty.css" rel="stylesheet">
 
 </head>
@@ -214,27 +214,12 @@
                         </div>
                     </div>
                     <div class="column is-4 has-text-centered">
-                        <div class='carousel carousel-animated carousel-animate-slide'>
-                            <div class='carousel-container'>
-                                <div class='carousel-item has-background is-active'>
-                                    <img class="is-background" src="./public/images/chat1phone.png" alt=""  />
-                                </div>
-                                <div class='carousel-item has-background'>
-                                    <img class="is-background" src="./public/images/chat2phone.png" alt=""  />
-                                </div>
-                            </div>
-                            <div class="carousel-navigation">
-                                <div class="carousel-nav-left">
-                                    <a class="button is-rounded">
-                                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="carousel-nav-right">
-                                    <a class="button is-rounded">
-                                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="wrapper">
+                            <img id="botdemo" src="./public/images/botpreview-no-loop.gif" alt="" />
+                            <a class="button is-outlined is-primary" onclick="document.getElementById('botdemo').src='./public/images/botpreview-no-loop.gif'">
+                                <i class="fas fa-redo-alt"></i>
+                                <span>Replay</span>
+                            </a>
                         </div>
                     </div>
                 </nav>
