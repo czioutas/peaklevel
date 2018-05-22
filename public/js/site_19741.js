@@ -166,6 +166,22 @@ if (document.querySelector('#b2cwaitinglistForm')) {
     });
 }
 
+window.addEventListener("load", function () {
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#edeff5",
+                "text": "#838391"
+            },
+            "button": {
+                "background": "#4b81e8"
+            }
+        },
+        "position": "bottom-left",
+        "theme": "edgeless"
+    })
+});
+
 function makeid() {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

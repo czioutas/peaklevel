@@ -42,65 +42,6 @@
 </head>
 
 <body class="layout-default Site">
-
-    <script>
-        function warn(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'warning',
-                theme: 'sunset',
-                text: text,
-                layout: 'topCenter'
-            }).show();
-        }
-
-        function danger(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'error',
-                theme: 'nest',
-                text: text,
-                layout: 'topCenter'
-            }).show();
-        }
-
-        function info(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'info',
-                theme: 'metroui',
-                text: text,
-                layout: 'topCenter',
-                timeout: 3000,
-                progressBar: true
-            }).show();
-        }
-
-        function success(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'success',
-                theme: 'sunset',
-                text: text,
-                layout: 'topCenter',
-                timeout: 3000,
-                progressBar: true
-            }).show();
-        }
-
-        function awesome(text) {
-            text = '<div class="is-size-4">' + text + ' 🎈 </div>'
-            new Noty({
-                type: 'success',
-                theme: 'nest',
-                text: text,
-                layout: 'topCenter',
-                timeout: 3000,
-                progressBar: true
-            }).show();
-        }
-    </script>
-
     <section class="hero is-fullheight is-light">
         <div class="container">
             <nav class="navbar is-transparent">
@@ -117,6 +58,9 @@
 
                 <div id="navbarExampleTransparentExample" class="navbar-menu">
                     <div class="navbar-end">
+                            <a class="navbar-item bd-navbar-item-documentation  " href="./about.html">
+                                <span>About us</span>
+                            </a>
                         <div class="navbar-item">
                             <p class="control">
                                 <a class="button is-primary" href="#" onclick="window.location.href = 'index.html'">
@@ -464,28 +408,7 @@
 
 <link rel="stylesheet" type="text/css" href="./public/lib/cookieconsent/build/cookieconsent.min.css" />
 <script src="./public/lib/cookieconsent/build/cookieconsent.min.js"></script>
-<script>
-    window.addEventListener("load", function () {
-        window.cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "#f5f5f5",
-                    "text": "black"
-                },
-                "button": {
-                    "background": "#209cee",
-                    "text": "white"
-                }
-            },
-            "content": {
-                "dismiss": "Got it! 🍪"
-            },
-            "theme": "edgeless",
-            "position": "bottom",
-            "static": true
-        })
-    });
-</script>
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119355894-1"></script>
@@ -502,7 +425,7 @@
 
 
 <script src="./public/lib/noty/lib/noty.min.js" type="text/javascript"></script>
-<script src="./public/js/site_19740.js" type="text/javascript"></script>
+<script src="./public/js/site_19741.js" type="text/javascript"></script>
 
 
 </html>
