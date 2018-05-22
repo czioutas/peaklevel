@@ -128,85 +128,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-if (document.getElementsByClassName('fb-customerchat')[0]) {
-    window.fbMessengerPlugins = window.fbMessengerPlugins || {
-        init: function () {
-            FB.init({
-                appId: '1678638095724206',
-                autoLogAppEvents: true,
-                xfbml: true,
-                version: 'v2.10'
-            });
-        },
-        callable: []
-    };
-    window.fbAsyncInit = window.fbAsyncInit || function () {
-        window.fbMessengerPlugins.callable.forEach(function (item) {
-            item();
+window.$crisp = [];
+window.CRISP_WEBSITE_ID = "b701ef4e-da12-4474-bdaa-0bc8f5ec1394";
+(function () {
+    d = document;
+    s = d.createElement("script");
+    s.src = "https://client.crisp.chat/l.js";
+    s.async = 1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+})();
+
+if (document.querySelector('#b2cwaitinglistForm')) {
+    document.querySelector('#b2cwaitinglistForm').addEventListener('submit', (e) => {
+        document.getElementById('refCode').value = getLastUrlSegment();
+        document.getElementById('userRefCode').value = makeid();
+        const formData = new FormData(e.target);
+
+        console.log(formData.getAll());
+
+        fetch("https://hooks.zapier.com/hooks/catch/3305492/a9ukye", {
+            method: "POST",
+            body: formData
+        }).then(res => {
+            document.getElementById('b2cwaitinglistForm').reset();
         });
-        window.fbMessengerPlugins.init();
-    };
-    setTimeout(function () {
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    }, 0);
 
-} else {
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "b701ef4e-da12-4474-bdaa-0bc8f5ec1394";
-    (function () {
-        d = document;
-        s = d.createElement("script");
-        s.src = "https://client.crisp.chat/l.js";
-        s.async = 1;
-        d.getElementsByTagName("head")[0].appendChild(s);
-    })();
-}
-
-if (document.getElementById('txtBetaList')) {
-    document.getElementById('txtBetaList').addEventListener("keyup", function (keyEvent) {
-        if (keyEvent.keyCode == 13) {
-            joinBeta();
-        }
+        success("Thank you! We will contact you shortly!");
+        e.preventDefault();
     });
-}
-
-function joinBeta() {
-    var email = document.getElementById('txtBetaList').value;
-    var refCode = getLastUrlSegment();
-
-    if (email.length > 0) {
-        var data = new FormData();
-        data.append("email", email);
-        data.append("refCode", refCode);
-        data.append("UserRefCode", makeid())
-
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                console.log(this.responseText);
-            }
-        });
-
-        xhr.open("POST", "https://hooks.zapier.com/hooks/catch/3305492/a9ukye/");
-        xhr.setRequestHeader("Cache-Control", "no-cache");
-
-        xhr.send(data);
-
-        document.getElementById('txtBetaList').value = "";
-    } else {
-        warn("Please provide a valid email address");
-    }
 }
 
 function makeid() {
