@@ -106,27 +106,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Get all "navbar-burger" elements
     var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-  
+
     // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
-  
-      // Add a click event on each of them
-      $navbarBurgers.forEach(function ($el) {
-        $el.addEventListener('click', function () {
-  
-          // Get the target from the "data-target" attribute
-          var target = $el.dataset.target;
-          var $target = document.getElementById(target);
-  
-          // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-          $el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-  
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+            $el.addEventListener('click', function () {
+
+                // Get the target from the "data-target" attribute
+                var target = $el.dataset.target;
+                var $target = document.getElementById(target);
+
+                // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                $el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+
+            });
         });
-      });
     }
-  
-  });
+
+});
 
 if (document.getElementsByClassName('fb-customerchat')[0]) {
     window.fbMessengerPlugins = window.fbMessengerPlugins || {
@@ -159,7 +159,7 @@ if (document.getElementsByClassName('fb-customerchat')[0]) {
         }(document, 'script', 'facebook-jssdk'));
     }, 0);
 
-} else { 
+} else {
     window.$crisp = [];
     window.CRISP_WEBSITE_ID = "b701ef4e-da12-4474-bdaa-0bc8f5ec1394";
     (function () {
@@ -168,5 +168,53 @@ if (document.getElementsByClassName('fb-customerchat')[0]) {
         s.src = "https://client.crisp.chat/l.js";
         s.async = 1;
         d.getElementsByTagName("head")[0].appendChild(s);
-    })(); 
+    })();
+}
+
+if (document.getElementById('txtBetaList')) {
+    document.getElementById('txtBetaList').addEventListener("keyup", function (keyEvent) {
+        if (keyEvent.keyCode == 13) {
+            joinBeta();
+        }
+    });
+}
+
+function joinBeta() {
+    var email = document.getElementById('txtBetaList').value;
+    var refCode = getLastUrlSegment();
+
+    if (email.length > 0) {
+        var data = new FormData();
+        data.append("email", email);
+        data.append("refCode", refCode);
+        data.append("UserRefCode", makeid())
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "https://hooks.zapier.com/hooks/catch/3305492/a9ukye/");
+        xhr.setRequestHeader("Cache-Control", "no-cache");
+
+        xhr.send(data);
+
+        document.getElementById('txtBetaList').value = "";
+    } else {
+        warn("Please provide a valid email address");
+    }
+}
+
+function makeid() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < 5; i++)
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
 }

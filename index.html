@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="has-navbar-fixed-top">
 
 <head>
     <meta charset="utf-8" />
@@ -36,194 +36,211 @@
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-    <link rel="stylesheet" href="./public/lib/bulma-ext/carousel.min.css" />
+    <link rel="stylesheet" href="./public/lib/bulma/css/bulma.min.css" />
     <link rel="stylesheet" href="./public/css/site_3.css" />
     <link href="./public/lib/noty/lib/noty.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./public/lib/cookieconsent/build/cookieconsent.min.css" />
 
 </head>
 
-<body class="layout-default Site">
+<body class="layout-default">
 
-    <script>
-        function warn(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'warning',
-                theme: 'sunset',
-                text: text,
-                layout: 'topCenter'
-            }).show();
-        }
-
-        function danger(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'error',
-                theme: 'nest',
-                text: text,
-                layout: 'topCenter'
-            }).show();
-        }
-
-        function info(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'info',
-                theme: 'metroui',
-                text: text,
-                layout: 'topCenter',
-                timeout: 3000,
-                progressBar: true
-            }).show();
-        }
-
-        function success(text) {
-            text = '<div class="is-size-4">' + text + '</div>'
-            new Noty({
-                type: 'success',
-                theme: 'sunset',
-                text: text,
-                layout: 'topCenter',
-                timeout: 3000,
-                progressBar: true
-            }).show();
-        }
-
-        function awesome(text) {
-            text = '<div class="is-size-4">' + text + ' 🎈 </div>'
-            new Noty({
-                type: 'success',
-                theme: 'nest',
-                text: text,
-                layout: 'topCenter',
-                timeout: 3000,
-                progressBar: true
-            }).show();
-        }
-    </script>
-
-    <section class="hero is-fullheight is-light">
+    <nav class="is-fixed-top navbar">
         <div class="container">
-            <nav class="navbar is-transparent">
-                <div class="navbar-brand">
-                    <a class="navbar-item" style="padding-top:0px; padding-bottom:0px;" href="/">
-                        <img style="max-height:100% !important;" width="250px" src="./public/images/peaklevel-full-right.svg" alt="PeakLevel">
-                    </a>
-                    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+            <div class="navbar-brand">
+                <a class="navbar-item" style="padding-top:0px; padding-bottom:0px;" href="/">
+                    <img style="max-height:100% !important;" width="250px" src="./public/images/peaklevel-full-right.svg" alt="PeakLevel">
+                </a>
+                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <p class="control">
+                            <a class="button is-medium is-primary" href="#" onclick="window.location.href = 'business.html'">
+                                <span class="icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </span>
+                                <span>For businesses</span>
+                            </a>
+                        </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </nav>
 
-                <div id="navbarExampleTransparentExample" class="navbar-menu">
-                    <div class="navbar-end">
-                        <div class="navbar-item">
+    <section class="hero is-medium">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered is-centered is-multiline">
+                    <div class="column is-5 has-text-centered">
+                        <h1 class="title is-size-2">
+                            Earn cash on the go for providing information using only your smartphone ✨
+                        </h1>
+                        <div class="field is-grouped">
+                            <p class="control is-expanded">
+                                <input id="txtBetaList" class="input is-large" type="email" required placeholder="Email Address">
+                            </p>
                             <p class="control">
-                                <a class="button is-primary" href="#" onclick="window.location.href = 'business.html'">
-                                    <span class="icon">
-                                        <i class="fas fa-briefcase"></i>
-                                    </span>
-                                    <span>For businesses</span>
+                                <a onclick="joinBeta()" class="button is-primary is-outlined is-large">
+                                    Join beta
                                 </a>
                             </p>
                         </div>
                     </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body main">
-            <div class="container">
-                <div class="columns is-centered is-multiline">
-                    <div class="column is-10 has-text-centered">
-                        <h1 class="title is-size-1-desktop is-size-2-tablet has-text-white">
-                            Make your data work for you
-                        </h1>
-                        <br />
-                        <h2 class="subtitle is-size-5-tablet is-size-4-desktop has-text-white	">
-                            At PeakLevel we believe that your data should be yours to own and use as you see fit. Earn cash for providing information
-                            on the go, using only WhatsApp and your smartphone.
-                        </h2>
-                        <a class="button is-large is-primary" href="https://m.me/1645407598841407?ref=lp1">Subscribe now</a>
+                    <div class="column is-5 has-text-centered">
+                        <div class="wrapper">
+                            <img id="botdemo" width="400px;" src="./public/images/botpreview-no-loop.gif" alt="" onclick="document.getElementById('botdemo').src='./public/images/botpreview-no-loop.gif'"
+                            />
+                        </div>
                     </div>
-
-                    <div class="column is-12"></div>
-                    <div class="column is-12"></div>
-                    <div class="column is-12"></div>
                 </div>
             </div>
-        </div>
-        <div class="hero-foot main">
-            <section style="padding-bottom: 70px;">
-                <div class="container">
-                    <p class="is-size-3-desktop is-size-4-tablet title has-text-white has-text-centered">
-                        24 data requests awaiting...
-                    </p>
-                </div>
-            </section>
         </div>
     </section>
 
     <div class="hero is-medium point-panel" style="padding-top: 0px !important;">
         <div class="hero-body point-panel-overlay">
-            <div class=" container">
-                <nav class="columns is-multiline is-vcentered">
-                    <div class="column is-12 has-text-centered">
-                        <h2 class="title is-size-2-desktop is-size-3-tablet">
-                            How it works!
-                        </h2>
-                        <br>
+            <div class="container">
+                <div class="columns is-vcentered is-centered is-multiline">
+                    <div class="column is-5 has-text-centered">
+                        <img style="max-height:100% !important;" width="400px" src="./public/images/undraw_make_it_rain_iwk4.svg" alt="PeakLevel">
                     </div>
-                    <div class="column is-6 has-text-centered">
-                        <div class="column is-6 is-offset-3 has-text-centered">
-                            <span class="icon is-large">
-                                <i class="fa fa-3x fa-mobile-alt" style="color:#23d160;"></i>
-                            </span>
-                            <p class="title is-size-5-tablet is-size-4-desktop" style="margin-top: 0.5em;">
-                                <strong>Sign up using your smartphone number.</strong>
-                            </p>
-                            <p class="subtitle">
-                            </p>
+                    <div class="column is-5 has-text-centered">
+                        <h2 class="title is-size-3">
+                            Competitive pay
+                        </h2>
+                        <p class="subtitle is-size-3">
+                            We’ve got loads of hungry customers! This gives you the participate in many requests and make very good money.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero is-medium point-panel" style="padding-top: 0px !important;">
+        <div class="hero-body point-panel-overlay">
+            <div class="container">
+                <div class="columns is-vcentered is-centered is-multiline">
+                    <div class="column is-5 has-text-centered">
+                        <h2 class="title is-size-3">
+                            Ease of use
+                        </h2>
+                        <p class="subtitle is-size-3">
+                            The whole experience takes place from your favorite instant messaging app.
+                        </p>
+                        <p class="subtitle is-size-3">
+                            No need to install yet another application on your phone!
+                        </p>
+                    </div>
+                    <div class="column is-5 has-text-centered">
+                        <img style="max-height:100% !important;" width="400px" src="./public/images/undraw_messages1_9ah2.svg" alt="PeakLevel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero is-medium point-panel" style="padding-top: 0px !important;">
+        <div class="hero-body point-panel-overlay">
+            <div class="container">
+                <div class="columns is-centered is-multiline">
+                    <div class="column is-4">
+                        <div class="has-shadow">
+                            <article class="message is-primary">
+                                <div class="message-header">
+                                    <p class="title is-size-4 has-text-white ">Added perks</p>
+                                </div>
+                                <div class="message-body content">
+                                    <ul>
+                                        <li class="subtitle is-size-5">
+                                            🌐 Be part of the future!
+                                        </li>
+                                        <li class="subtitle is-size-5">
+                                            💲 Competitive pay
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
                         </div>
-                        <br />
-                        <br />
-                        <div class="column is-6 is-offset-3 has-text-centered">
-                            <span class="icon is-large">
-                                <i class="fa fa-3x fa-clipboard-check" style="color:#209cee;"></i>
-                            </span>
-                            <p class="title is-size-5-tablet is-size-4-desktop" style="margin-top: 0.5em;">
-                                <strong>Answer the questions and information requests you find interesting</strong>
-                            </p>
-                            <p class="subtitle">
-                            </p>
+                    </div>
+                    <div class="column is-4">
+                        <div class="has-shadow">
+                            <article class="message is-primary">
+                                <div class="message-header">
+                                    <p class="title is-size-4 has-text-white ">Things you will need</p>
+                                </div>
+                                <div class="message-body content">
+                                    <ul>
+                                        <li class="subtitle is-size-5">
+                                            📱 A smartphone
+                                        </li>
+                                        <li class="subtitle is-size-5">
+                                            ⌛A few minutes of your time per task
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
                         </div>
-                        <br />
-                        <br />
-                        <div class="column is-6 is-offset-3 has-text-centered">
-                            <span class="icon is-large">
-                                <i class="fa fa-3x fa-hand-holding-usd" style="color:#00d1b2;"></i>
-                            </span>
-                            <p class="title is-size-5-tablet is-size-4-desktop" style="margin-top: 0.5em;">
-                                <strong>Get paid</strong>
-                            </p>
-                            <p class="subtitle">
-                            </p>
-                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column is-12 has-text-centered is-centered" style="margin-bottom: 3em;">
+                        <h3 class="title is-size-2">
+                            How it works
+                        </h3>
                     </div>
                     <div class="column is-4 has-text-centered">
-                        <div class="wrapper">
-                            <img id="botdemo" src="./public/images/botpreview-no-loop.gif" alt="" />
-                            <a class="button is-outlined is-primary" onclick="document.getElementById('botdemo').src='./public/images/botpreview-no-loop.gif'">
-                                <i class="fas fa-redo-alt"></i>
-                                <span>Replay</span>
-                            </a>
-                        </div>
+                        <span class="icon is-large">
+                            <i class="fa fa-3x fa-mobile-alt" style="color:#23d160;"></i>
+                        </span>
+                        <p class="title is-size-4" style="margin-top: 0.5em;">
+                            A request is created
+                        </p>
+                        <p class="subtitle">
+                            Our business customers create their data request with our help which is then registered to our system.
+                        </p>
                     </div>
-                </nav>
+                    <div class="column is-4 has-text-centered">
+                        <span class="icon is-large">
+                            <i class="fa fa-3x fa-clipboard-check" style="color:#209cee;"></i>
+                        </span>
+                        <p class="title is-size-4" style="margin-top: 0.5em;">
+                            <strong>We match you to available requests</strong>
+                        </p>
+                        <p class="subtitle">
+                            Based on the filtering criteria and your specifications, we match you to the best available task.
+                        </p>
+                    </div>
+                    <div class="column is-4 has-text-centered">
+                        <span class="icon is-large">
+                            <i class="fa fa-3x fa-hand-holding-usd" style="color:#00d1b2;"></i>
+                        </span>
+                        <p class="title is-size-4" style="margin-top: 0.5em;">
+                            <strong>Get paid</strong>
+                        </p>
+                        <p class="subtitle">
+                            After you complete the task, we verify your answers and your account gets credited.
+                        </p>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -309,27 +326,9 @@
                         </p>
                     </div>
 
-                    <div class="column">
-                        <form action="https://getpeaklevel.us18.list-manage.com/subscribe/post?u=f528a660be0df68a45bf9055d&amp;id=cd4c10b00b" method="post"
-                            id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-                            novalidate>
-                            <div id="mc_embed_signup_scroll">
-                                <div class="field has-addons">
-                                    <div class="control is-expanded has-icons-left has-icons-right">
-                                        <input type="email" class="input is-medium" placeholder="Email" value="" name="EMAIL" id="mce-EMAIL" required="">
-                                        <span class="icon is-medium is-left">
-                                            <i class="fa fa-envelope"></i>
-                                        </span>
-                                    </div>
-                                    <div class="control">
-                                        <input type="submit" class="button is-medium is-decent is-outlined" name="subscribe" id="mc-embedded-subscribe" value="Join 😊">
-                                    </div>
-                                </div>
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                    <input type="text" name="b_f528a660be0df68a45bf9055d_cd4c10b00b" tabindex="-1" value="">
-                                </div>
-                            </div>
-                        </form>
+                    <div class="column is-6 has-text-centered is-centered">
+                        <a href="https://getpeaklevel.us18.list-manage.com/subscribe?u=f528a660be0df68a45bf9055d&id=cd4c10b00b" target="_blank" type="button"
+                            class="button is-large is-outlined is-primary"> Subscribe 😊</a>
                     </div>
                 </div>
             </div>
@@ -430,27 +429,20 @@
     </div>
 </body>
 
-<link rel="stylesheet" type="text/css" href="./public/lib/cookieconsent/build/cookieconsent.min.css" />
 <script src="./public/lib/cookieconsent/build/cookieconsent.min.js"></script>
 <script>
     window.addEventListener("load", function () {
         window.cookieconsent.initialise({
             "palette": {
                 "popup": {
-                    "background": "#f5f5f5",
-                    "text": "black"
+                    "background": "#edeff5",
+                    "text": "#838391"
                 },
                 "button": {
-                    "background": "#209cee",
-                    "text": "white"
+                    "background": "#4b81e8"
                 }
             },
-            "content": {
-                "dismiss": "Got it! 🍪"
-            },
-            "theme": "edgeless",
-            "position": "bottom",
-            "static": true
+            "theme": "edgeless"
         })
     });
 </script>
@@ -468,9 +460,8 @@
     gtag('config', 'UA-119355894-1');
 </script>
 
-<script src="./public/lib/bulma-ext/carousel.min.js" type="text/javascript"></script>
 <script src="./public/lib/noty/lib/noty.min.js" type="text/javascript"></script>
-<script src="./public/js/site_19739.js" type="text/javascript"></script>
+<script src="./public/js/site_19740.js" type="text/javascript"></script>
 
 
 </html>
