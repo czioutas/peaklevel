@@ -30,6 +30,62 @@ function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
 
+function warn(text) {
+    text = '<div class="is-size-4">' + text + '</div>'
+    new Noty({
+        type: 'warning',
+        theme: 'sunset',
+        text: text,
+        layout: 'topCenter'
+    }).show();
+}
+
+function danger(text) {
+    text = '<div class="is-size-4">' + text + '</div>'
+    new Noty({
+        type: 'error',
+        theme: 'nest',
+        text: text,
+        layout: 'topCenter'
+    }).show();
+}
+
+function info(text) {
+    text = '<div class="is-size-4">' + text + '</div>'
+    new Noty({
+        type: 'info',
+        theme: 'metroui',
+        text: text,
+        layout: 'topCenter',
+        timeout: 3000,
+        progressBar: true
+    }).show();
+}
+
+function success(text) {
+    text = '<div class="is-size-4">' + text + '</div>'
+    new Noty({
+        type: 'success',
+        theme: 'sunset',
+        text: text,
+        layout: 'topCenter',
+        timeout: 3000,
+        progressBar: true
+    }).show();
+}
+
+function awesome(text) {
+    text = '<div class="is-size-4">' + text + ' 🎈 </div>'
+    new Noty({
+        type: 'success',
+        theme: 'nest',
+        text: text,
+        layout: 'topCenter',
+        timeout: 3000,
+        progressBar: true
+    }).show();
+}
+
 if (document.querySelector('#businessForm')) {
     document.querySelector('#businessForm').addEventListener('submit', (e) => {
         const formData = new FormData(e.target);
@@ -73,9 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 if (document.getElementsByClassName('fb-customerchat')[0]) {
-
-    var carousels = bulmaCarousel.attach();
-
     window.fbMessengerPlugins = window.fbMessengerPlugins || {
         init: function () {
             FB.init({
