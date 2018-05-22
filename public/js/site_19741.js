@@ -26,6 +26,16 @@ function getCookie(cname) {
     return "";
 }
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
@@ -140,20 +150,18 @@ window.CRISP_WEBSITE_ID = "b701ef4e-da12-4474-bdaa-0bc8f5ec1394";
 
 if (document.querySelector('#b2cwaitinglistForm')) {
     document.querySelector('#b2cwaitinglistForm').addEventListener('submit', (e) => {
-        document.getElementById('refCode').value = getLastUrlSegment();
+        document.getElementById('refCode').value = getParameterByName('refcode');
         document.getElementById('userRefCode').value = makeid();
-        const formData = new FormData(e.target);
+        var formData = new FormData(e.target);
 
-        console.log(formData.getAll());
-
-        fetch("https://hooks.zapier.com/hooks/catch/3305492/a9ukye", {
+        fetch("https://hooks.zapier.com/hooks/catch/3305492/a9hhbc/", {
             method: "POST",
             body: formData
         }).then(res => {
             document.getElementById('b2cwaitinglistForm').reset();
         });
 
-        success("Thank you! We will contact you shortly!");
+        success("Thank you for signing up! We will keep you up to date!");
         e.preventDefault();
     });
 }
